@@ -4,7 +4,7 @@
 
 一个 Typora 风格的 Markdown 编辑器：**你在文字里写，页面在你周围成形**。没有预览窗格，没有左右分栏——你正在读的这一段，本身就是源码。
 
-![Moss](docs/screenshot.png)
+![Moss](docs/preview.png)
 
 ## 它是什么
 

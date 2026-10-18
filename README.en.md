@@ -4,7 +4,7 @@
 
 A Typora-style Markdown editor: **you write in the text, and the page takes shape around it**. No preview pane, no split view — the paragraph you are reading *is* the source.
 
-![Moss](docs/screenshot.png)
+![Moss](docs/preview.png)
 
 ## What it is
 
