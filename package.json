@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
-  "description": "Moss — a calm, Typora-style Markdown editor",
+  "description": "Moss — a calm, seamless Markdown editor",
   "author": "Moss",
   "license": "MIT",
   "main": "electron/main.cjs",

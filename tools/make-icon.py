@@ -1,5 +1,4 @@
-"""Generate the Moss app icon: a light squircle tile with a serif M,
-in the same visual genre as Typora's tile, but a different letter and palette.
+"""Generate the Moss app icon: a light squircle tile with a serif M.
 
 Usage: python tools/make-icon.py [A|B|C|D]
 """

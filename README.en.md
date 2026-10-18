@@ -2,13 +2,13 @@
 
 [简体中文](README.md) · English
 
-A Typora-style Markdown editor: **you write in the text, and the page takes shape around it**. No preview pane, no split view — the paragraph you are reading *is* the source.
+A seamless Markdown editor: **you write in the text, and the page takes shape around it**. No preview pane, no split view — the paragraph you are reading *is* the source.
 
 ![Moss](docs/preview.png)
 
 ## What it is
 
-Typora proved that editing Markdown does not need a split screen. Moss follows the same idea with a different engine, written from scratch: a [CodeMirror 6](https://codemirror.net/) core plus a rendering layer that turns the syntax tree into decorations.
+Editing Markdown does not need a split screen. Moss builds that idea on its own engine, written from scratch: a [CodeMirror 6](https://codemirror.net/) core plus a rendering layer that turns the syntax tree into decorations.
 
 It is a working writing tool, not a demo: tables are editable in place, math renders, folders are browsable, and the window frame follows the theme.
 
@@ -127,6 +127,6 @@ If `titleBarOverlay.height` matches the tab bar (42px), the overlay's background
 
 ## About
 
-This is an independent implementation, written from scratch against publicly observable behaviour. It contains no code, styles, icons or theme files from Typora, and it is not a redistribution of Typora. Typora is a commercial product — if you need what it does, buy it.
+This is an independent implementation, written from scratch against publicly observable behaviour. It contains no proprietary code, styles, icons or theme resources from any third party.
 
 MIT License.
