@@ -1,0 +1,81 @@
+{
+  "name": "moss",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Moss — a calm, Typora-style Markdown editor",
+  "author": "Moss",
+  "main": "electron/main.cjs",
+  "scripts": {
+    "dev": "vite --port 5188 --host 127.0.0.1",
+    "build": "vite build",
+    "preview": "vite preview --port 5188 --host 127.0.0.1",
+    "desktop": "electron electron/main.cjs",
+    "dist": "vite build && electron-builder --win nsis",
+    "dist:dir": "vite build && electron-builder --win --dir"
+  },
+  "build": {
+    "appId": "com.moss.editor",
+    "productName": "Moss",
+    "copyright": "Moss",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "fileAssociations": [
+      {
+        "ext": [
+          "md",
+          "markdown",
+          "mdown",
+          "mkd"
+        ],
+        "name": "Markdown Document",
+        "description": "Markdown document",
+        "role": "Editor"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "Moss",
+      "artifactName": "Moss-Setup-${version}.${ext}"
+    }
+  },
+  "devDependencies": {
+    "@codemirror/autocomplete": "^6.20.3",
+    "@codemirror/commands": "^6.11.1",
+    "@codemirror/lang-markdown": "^6.5.2",
+    "@codemirror/language": "^6.13.1",
+    "@codemirror/language-data": "^6.5.2",
+    "@codemirror/search": "^6.7.2",
+    "@codemirror/state": "^6.7.6",
+    "@codemirror/view": "^6.43.14",
+    "@lezer/common": "^1.5.3",
+    "@lezer/highlight": "^1.2.5",
+    "electron": "^44.9.0",
+    "electron-builder": "^26.15.3",
+    "katex": "^0.19.0",
+    "marked": "^18.1.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
+  }
+}

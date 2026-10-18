@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="paper">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="./icon.png" />
+    <title>Moss</title>
+  </head>
+  <body>
+    <div id="app">
+      <aside id="sidebar">
+        <div class="side-head">
+          <span class="brand"><img class="brand-icon" src="./mark-dark.png" alt="" />Moss</span>
+          <button id="btn-hide-side" class="icon-btn" data-i18n-title="btn.hideSide">‹</button>
+        </div>
+        <div class="side-tabs">
+          <button class="side-tab active" data-pane="files" data-i18n="nav.files">Files</button>
+          <button class="side-tab" data-pane="outline" data-i18n="nav.outline">Outline</button>
+        </div>
+        <div id="pane-files" class="pane">
+          <div class="pane-actions">
+            <button id="btn-open-file" class="ghost-btn" data-i18n="btn.openFile">Open file</button>
+            <button id="btn-open-folder" class="ghost-btn" data-i18n="btn.openFolder">Open folder</button>
+          </div>
+          <div id="file-tree" class="tree"></div>
+        </div>
+        <div id="pane-outline" class="pane hidden">
+          <div id="outline" class="outline"></div>
+        </div>
+      </aside>
+
+      <main id="main">
+        <header id="tabbar">
+          <button id="btn-show-side" class="icon-btn hidden" data-i18n-title="btn.showSide">›</button>
+          <div id="tabs"></div>
+          <div class="tabbar-actions">
+            <button id="btn-new" class="icon-btn" data-i18n-title="btn.new">+</button>
+            <button id="btn-menu" class="icon-btn" data-i18n-title="btn.menu"><span class="dots">⋯</span></button>
+          </div>
+        </header>
+
+        <div id="editor-host"></div>
+
+        <footer id="statusbar">
+          <div class="status-left">
+            <span id="st-doc" data-i18n="status.untitled">Untitled</span>
+          </div>
+          <div class="status-right">
+            <span id="st-words"></span>
+            <span id="st-chars"></span>
+            <button id="btn-mode" class="status-btn" data-i18n-title="btn.mode">Live</button>
+            <select id="theme-select" class="status-select" data-i18n-title="status.theme">
+              <option value="paper" data-i18n="theme.paper">Paper</option>
+              <option value="github" data-i18n="theme.github">GitHub</option>
+              <option value="sepia" data-i18n="theme.sepia">Sepia</option>
+              <option value="night" data-i18n="theme.night">Night</option>
+              <option value="moss-dark" data-i18n="theme.mossDark">Moss Dark</option>
+            </select>
+          </div>
+        </footer>
+      </main>
+    </div>
+
+    <div id="menu" class="menu hidden"></div>
+    <div id="toast" class="toast hidden"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

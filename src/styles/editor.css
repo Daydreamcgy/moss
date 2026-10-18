@@ -1,0 +1,271 @@
+/* ---------- CodeMirror shell ---------- */
+.cm-editor {
+  height: 100%;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.cm-editor.cm-focused { outline: none; }
+
+.cm-scroller {
+  font-family: var(--content-font);
+  line-height: 1.72;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.cm-content {
+  padding: 58px max(26px, calc((100% - 740px) / 2)) 45vh;
+  caret-color: var(--accent);
+  font-size: 16.5px;
+  max-width: none;
+  min-height: 100%;
+}
+
+.cm-line { padding: 0; }
+.cm-line::selection, .cm-line *::selection { background: var(--sel); }
+
+.cm-selectionBackground,
+.cm-editor ::selection { background: var(--sel) !important; }
+
+.cm-cursor, .cm-dropCursor { border-left: 2px solid var(--accent); }
+
+.cm-panels {
+  background: var(--bg-elev);
+  border-color: var(--border);
+  color: var(--fg);
+}
+.cm-panels input, .cm-panels button { font-family: var(--ui-font); font-size: 12px; }
+.cm-searchMatch { background: color-mix(in srgb, var(--accent) 22%, transparent); }
+.cm-searchMatch-selected { background: color-mix(in srgb, var(--accent) 38%, transparent); }
+
+/* ---------- block typography ---------- */
+.cm-line.cm-h1 { font-size: 2.05em; font-weight: 650; line-height: 1.28; padding-top: .55em; letter-spacing: -0.012em; }
+.cm-line.cm-h2 { font-size: 1.55em; font-weight: 640; line-height: 1.34; padding-top: .45em; }
+.cm-line.cm-h3 { font-size: 1.28em; font-weight: 640; line-height: 1.4; padding-top: .35em; }
+.cm-line.cm-h4 { font-size: 1.1em; font-weight: 640; padding-top: .25em; }
+.cm-line.cm-h5 { font-size: 1em; font-weight: 640; }
+.cm-line.cm-h6 { font-size: .95em; font-weight: 640; color: var(--fg-dim); }
+
+.cm-line.cm-h1, .cm-line.cm-h2, .cm-line.cm-h3 { color: var(--fg); }
+
+.cm-line.cm-quote {
+  color: var(--fg-dim);
+  border-left: 3px solid var(--quote-bar);
+  padding-left: 1.05em;
+  font-style: italic;
+}
+.cm-line.cm-quote .cm-strong, .cm-line.cm-quote .cm-em { color: color-mix(in srgb, var(--fg) 72%, transparent); }
+
+/* ---------- inline ---------- */
+.cm-strong { font-weight: 680; }
+.cm-em { font-style: italic; }
+.cm-strike { text-decoration: line-through; color: var(--fg-dim); }
+
+.cm-inline-code {
+  font-family: var(--mono);
+  font-size: .885em;
+  background: var(--code-bg);
+  color: var(--code-fg);
+  border-radius: 4px;
+  padding: .14em .34em;
+  box-decoration-break: clone;
+}
+
+.cm-link {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--link) 45%, transparent);
+  text-underline-offset: 2.5px;
+  cursor: pointer;
+}
+.cm-link:hover { text-decoration-color: var(--link); }
+
+.cm-formatting {
+  color: var(--fg-faint);
+  font-weight: 400;
+  font-style: normal;
+  text-decoration: none;
+}
+
+/* ---------- code blocks ---------- */
+.cm-line.cm-codeblock {
+  background: var(--code-bg);
+  font-family: var(--mono);
+  font-size: .86em;
+  line-height: 1.62;
+  padding-left: 1.15em;
+  padding-right: 1.15em;
+}
+
+.cm-line.cm-codeblock.cm-codeblock-start {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  padding-top: .7em;
+  margin-top: .35em;
+}
+
+.cm-line.cm-codeblock.cm-codeblock-end {
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  padding-bottom: .7em;
+  margin-bottom: .35em;
+}
+
+.cm-lang-chip {
+  display: inline-block;
+  font-family: var(--ui-font);
+  font-size: 10px;
+  letter-spacing: .04em;
+  color: var(--fg-faint);
+  text-transform: uppercase;
+  padding: 0 0 0 2px;
+  user-select: none;
+}
+
+/* ---------- widgets ---------- */
+.cm-image-widget { display: inline-block; max-width: 100%; vertical-align: bottom; }
+
+.cm-image-widget img {
+  max-width: 100%;
+  display: block;
+  margin: .35em 0;
+  border-radius: 6px;
+}
+
+.cm-image-widget.cm-image-error {
+  font-family: var(--ui-font);
+  font-size: 12px;
+  color: var(--fg-faint);
+  background: var(--code-bg);
+  border-radius: 6px;
+  padding: 6px 10px;
+}
+
+.moss-hr {
+  height: 1px;
+  background: var(--border);
+  margin: 1.35em 0;
+  width: 100%;
+}
+
+.cm-table-widget {
+  margin: .55em 0;
+  overflow-x: auto;
+  font-family: var(--ui-font);
+  font-size: .88em;
+}
+
+.cm-table-widget table {
+  border-collapse: collapse;
+  width: 100%;
+  line-height: 1.55;
+}
+
+.cm-table-widget th, .cm-table-widget td {
+  border: 1px solid var(--border);
+  padding: 6px 11px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.cm-table-widget thead th {
+  background: color-mix(in srgb, var(--fg) 4%, transparent);
+  font-weight: 620;
+}
+
+.cm-table-widget tbody tr:nth-child(even) td {
+  background: color-mix(in srgb, var(--fg) 2.2%, transparent);
+}
+
+.cm-math { font-size: 1.02em; }
+.cm-math .katex { font-size: 1.02em; }
+
+.cm-math-block {
+  display: block;
+  text-align: center;
+  margin: 0;
+  padding: .12em 0;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.cm-math-block .katex-display { margin: 0; }
+
+.cm-task {
+  width: 14px;
+  height: 14px;
+  margin: 0 6px 0 0;
+  vertical-align: -2px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.cm-bullet {
+  color: var(--accent);
+  display: inline-block;
+  width: 1.1em;
+  text-align: center;
+  opacity: .8;
+}
+
+.cm-line.cm-li {
+  padding-left: 1.1em;
+  text-indent: -1.1em;
+}
+
+.cm-line.cm-li .cm-task { margin-right: .45em; }
+
+/* ---------- focus / typewriter ---------- */
+.cm-line.cm-dim { opacity: .32; transition: opacity .16s; }
+.cm-line.cm-dim .cm-codeblock,
+.cm-line.cm-dim.cm-codeblock { background: transparent; }
+
+.cm-table-widget th, .cm-table-widget td { cursor: text; }
+.cm-table-widget tbody td:hover { background: color-mix(in srgb, var(--accent) 8%, transparent); }
+
+.cm-cell-editor {
+  position: fixed;
+  z-index: 200;
+  margin: 0;
+  padding: 0 10px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  background: var(--bg-elev);
+  color: var(--fg);
+  font-family: var(--ui-font);
+  font-size: 13px;
+  line-height: 1.4;
+  outline: none;
+  box-sizing: border-box;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+}
+
+.outline-row.active {
+  background: var(--accent-soft);
+  color: var(--fg);
+}
+
+/* ---------- source mode ---------- */
+.cm-source .cm-scroller {
+  font-family: var(--mono);
+}
+
+.cm-source .cm-content {
+  font-size: 14px;
+  line-height: 1.78;
+}
+
+.cm-source .cm-line.cm-h1,
+.cm-source .cm-line.cm-h2,
+.cm-source .cm-line.cm-h3,
+.cm-source .cm-line.cm-h4,
+.cm-source .cm-line.cm-h5,
+.cm-source .cm-line.cm-h6 {
+  font-size: inherit;
+  font-weight: inherit;
+  padding-top: 0;
+}
+
+/* ---------- empty editor ---------- */
+.cm-placeholder { color: var(--fg-faint); }
